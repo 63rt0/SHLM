@@ -10,6 +10,10 @@ class Conchi extends Jugador {
         this.cadenciaDisparo = 5;
         this.tiempoDisparo = 0;
 
+        //Vida
+        this.vidas=2;
+        this.velocidad=3;
+
         // Animaciones
         this.quieto = new Animacion(imagenes.conchi, this.ancho, this.alto, 0,1);
         this.caminando = new Animacion(imagenes.conchi_caminando,

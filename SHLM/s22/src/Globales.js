@@ -15,7 +15,7 @@ var entrada = entradas.pulsaciones;
 
 
 var nivelActual = 0;
-var nivelMaximo = 2;
+var nivelMaximo = 4;
 
 
 var estados = {};
@@ -41,7 +41,9 @@ jugador.y;
 var conchi = {};
 conchi.balas = 0;
 conchi.armado = false;
+conchi.vidas = 2;
 
 var ceferina = {};
 ceferina.balas = 0;
 ceferina.armado = false;
+ceferina.vidas = 3;

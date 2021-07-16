@@ -12,6 +12,10 @@ class Ceferina extends Jugador {
         this.cadenciaDisparo = 5;
         this.tiempoDisparo = 0;
 
+        //Atributos
+        this.vidas=3;
+        this.velocidad=2;
+
         // Animaciones
         this.quieto = new Animacion(imagenes.ceferina, this.ancho, this.alto, 0,1);
         this.caminando = new Animacion(imagenes.ceferina_caminando,

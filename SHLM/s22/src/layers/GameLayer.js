@@ -27,9 +27,12 @@ class GameLayer extends Layer {
 
         this.fondoPuntos =
             new Fondo(imagenes.icono_puntos, 480*0.85,320*0.05);
+        this.fondoVida =
+            new Fondo(imagenes.icono_vida, 480*0.05,320*0.85);
 
+        this.vidas = new Texto(0,480*0.07,320*0.9 );
 
-        this.disparosJugador = []
+        this.disparosJugador = [];
         this.balas = new Texto(0,480*0.9,320*0.07 );
         this.cargarMapa("res/"+nivelActual+".txt");
 
@@ -121,7 +124,11 @@ class GameLayer extends Layer {
         // Enemigo - jugador
         for (var i=0; i < this.enemigos.length; i++){
             if ( this.jugador.colisiona(this.enemigos[i]) && (this.enemigos[i].estado!=estados.muriendo && this.enemigos[i].estado!=estados.muerto)){
-                this.iniciar();
+
+                this.jugador.vidas=this.jugador.vidas-1;
+                this.enemigos[i].grados = this.jugador.grados;
+                this.enemigos[i].radianes = this.jugador.grados/180*Math.PI;
+                this.enemigos[i].impactado();
             }
         }
 
@@ -149,13 +156,25 @@ class GameLayer extends Layer {
         //Disparo enemigo - jugador
         for (var i=0; i < this.disparosEnemigos.length; i++){
             if ( this.jugador.colisiona(this.disparosEnemigos[i])){
-                this.iniciar();
+                this.jugador.vidas=this.jugador.vidas-1;
+
+                this.espacio
+                    .eliminarCuerpoDinamico(this.disparosEnemigos[i]);
+                this.disparosEnemigos.splice(i, 1);
+                i = i-1;
             }
         }
 
 
 
         this.balas.valor=this.jugador.balas;
+        this.vidas.valor=this.jugador.vidas;
+
+
+        if(this.jugador.vidas<=0) {
+            nivelActual = 0;
+            this.iniciar();//TODO: no resetea
+        }
 
 
         if ( this.enemigos.length==0){
@@ -237,6 +256,8 @@ class GameLayer extends Layer {
         this.fondoPuntos.dibujar();
         this.balas.dibujar();
         this.cursor.dibujar();
+        this.fondoVida.dibujar();
+        this.vidas.dibujar();
 
     }
 
@@ -412,23 +433,25 @@ class GameLayer extends Layer {
 
         //cambiar jugador
         if(controles.cambiarConchi) {
-            if(this.jugadorNumero!=1) {
+            if(this.jugadorNumero!=1 && conchi.vidas>0) {
                 this.guardarJugador();
                 this.jugador=null
                 this.jugador = new Conchi(jugador.x, jugador.y);//TODO: orientacion
                 this.jugador.armado = conchi.armado;
                 this.jugador.balas = conchi.balas;
+                this.jugador.vidas = conchi.vidas;
                 this.jugadorNumero = 1;
                 this.espacio.agregarCuerpoDinamico(this.jugador);
             }
         }
         if(controles.cambiarCeferina) {
-            if(this.jugadorNumero!=2) {
+            if(this.jugadorNumero!=2 && ceferina.vidas>0) {
                 this.guardarJugador();
                 this.jugador=null
                 this.jugador=new Ceferina(jugador.x, jugador.y);//TODO: orientacion
                 this.jugador.armado=ceferina.armado;
                 this.jugador.balas=ceferina.balas;
+                this.jugador.vidas = ceferina.vidas;
                 this.jugadorNumero=2;
                 this.espacio.agregarCuerpoDinamico(this.jugador);
             }
@@ -478,10 +501,12 @@ class GameLayer extends Layer {
             case 1:
                 conchi.armado=this.jugador.armado;
                 conchi.balas=this.jugador.balas;
+                conchi.vidas=this.jugador.vidas;
                 break;
             case 2:
                 ceferina.armado=this.jugador.armado;
                 ceferina.balas=this.jugador.balas;
+                ceferina.vidas=this.jugador.vidas;
                 break;
         }
         jugador.x=this.jugador.x;

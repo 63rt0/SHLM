@@ -1,9 +1,9 @@
 class DisparoJugador extends Disparo {
 
     constructor(x, y, grados) {
-        super(imagenes.bala, x, y);
+        super(imagenes.bala_jugador, x, y);
 
-        this.movimiento = new Animacion(imagenes.bala, this.ancho, this.alto, 0,1);
+        this.movimiento = new Animacion(imagenes.bala_jugador, this.ancho, this.alto, 0,1);
         this.animacion = this.movimiento;
 
 

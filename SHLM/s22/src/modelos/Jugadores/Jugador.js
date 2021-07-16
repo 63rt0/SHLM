@@ -99,7 +99,7 @@ class Jugador extends Modelo {
 
     moverX (direccion){
         if(this.estado!=estados.golpeando) {
-            this.vx = direccion * 3 * aceleracion;
+            this.vx = direccion * this.velocidad * aceleracion;
             if(this.vx!=0) {
                 this.estado=estados.moviendo;
             }
@@ -110,7 +110,7 @@ class Jugador extends Modelo {
 
     moverY (direccion){
         if(this.estado!=estados.golpeando) {
-            this.vy = direccion * 3 * aceleracion;
+            this.vy = direccion * this.velocidad * aceleracion;
             if(this.vy!=0) {
                 this.estado=estados.moviendo;
             }}
