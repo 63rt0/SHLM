@@ -31,3 +31,17 @@ estados.apuntando = 9;
 var orientaciones = {};
 orientaciones.derecha = 2;
 orientaciones.izquierda = 3;
+
+
+
+var jugador = {};
+jugador.x;
+jugador.y;
+
+var conchi = {};
+conchi.balas = 0;
+conchi.armado = false;
+
+var ceferina = {};
+ceferina.balas = 0;
+ceferina.armado = false;

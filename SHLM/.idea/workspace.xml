@@ -1,8 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="941d1e67-95dd-4dfb-a5fe-14f7927fd206" name="Default" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="941d1e67-95dd-4dfb-a5fe-14f7927fd206" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s22/src/modelos/Jugadores/Ceferina.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s22/src/modelos/Jugadores/Conchi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/s22/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/s22/res/1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/s22/res/2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/abeja.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/abeja_morir_derecha.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/abeja_morir_izquierda.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/abeja_movimiento_derecha.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/abeja_movimiento_izquierda.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/asteroide.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/bloque_fondo_muro.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/bloque_tierra.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/boton_disparo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/boton_pausa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/boton_salto.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/copa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/corazon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/disparo_enemigo_derecha.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/disparo_enemigo_izquierda.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/disparo_jugador.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/icono_recolectable.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/icono_vidas.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/jugador.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/jugador_caminando.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/jugador_golpeando.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/jugador_pistola.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/jugador_pistola_caminando.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/marciano.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/marciano_morir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/marciano_movimiento - copia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/marciano_movimiento.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/mensaje_como_jugar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/mensaje_ganar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/mensaje_perder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/moneda.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/pad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/planeta_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/planeta_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/src/EventosTeclado.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/EventosTeclado.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/src/Globales.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/Globales.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/src/Res.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/Res.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/src/layers/GameLayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/layers/GameLayer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/src/modelos/Jugador.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/modelos/Jugadores/Jugador.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,30 +67,29 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1Snv4Hx1zR8BSCeqLgBsYn1GWCg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Temporal\rabas\SHLM\SHLM\SHLM\s22\src\modelos\Jugadores" />
       <recent name="F:\Universidad\Tercero\SEV\Lab\HyperHotLineMiami\s22\src" />
       <recent name="E:\Universidad\Tercero\SEV\Lab\EntregaPlataformas\plataformasAmpliado\s2\src\modelos\disparos" />
       <recent name="E:\Universidad\Tercero\SEV\Lab\EntregaPlataformas\plataformasAmpliado\s2\src\modelos\enemigos" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration default="true" type="js.build_tools.gulp">
@@ -69,6 +114,7 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -83,11 +129,23 @@
       <workItem from="1575453418041" duration="10796000" />
       <workItem from="1575471088340" duration="22522000" />
       <workItem from="1575550516479" duration="20859000" />
+      <workItem from="1626442199690" duration="7133000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">

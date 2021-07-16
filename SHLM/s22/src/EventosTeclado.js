@@ -30,6 +30,14 @@ function onKeyDown( event) {
                 controles.interactuar = true;
                 break;
 
+            case 49://1
+                controles.cambiarConchi = true;
+                break;
+
+            case 50://2
+                controles.cambiarCeferina = true;
+                break;
+
             case 81://Q
                 controles.soltar = true;
                 break;
@@ -74,6 +82,15 @@ function onKeyUp( event) {
         case 69://E
             controles.interactuar = false;
             break;
+
+        case 49://1
+            controles.cambiarConchi = false;
+            break;
+
+        case 50://2
+            controles.cambiarCeferina = false;
+            break;
+
         case 81://Q
             controles.soltar = false;
             break;

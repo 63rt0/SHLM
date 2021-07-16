@@ -1,29 +1,10 @@
 class Jugador extends Modelo {
 
-    constructor(x, y) {
-        super(imagenes.jugador , x, y)
-        this.estado = estados.moviendo;
+    constructor(img, x, y) {
+        super(img , x, y)
 
         this.vx = 0; // velocidadX
         this.vy = 0; // velocidadY
-
-        // Disparo
-        this.armado = false;
-        this.balas = 0;
-        this.cadenciaDisparo = 5;
-        this.tiempoDisparo = 0;
-
-        // Animaciones
-        this.quieto = new Animacion(imagenes.jugador, this.ancho, this.alto, 0,1);
-        this.caminando = new Animacion(imagenes.jugador_caminando,
-           16, 24, 4, 8);
-        this.golpeando = new Animacion(imagenes.jugador_golpeando, 32, 32, 4 , 4,this.finAnimacionGolpear.bind(this));
-        this.quietoP=new Animacion(imagenes.jugador_pistola,38,15,0,1);
-        this.caminandoP=new Animacion(imagenes.jugador_pistola_caminando,38,15,4,8);
-        this.quietoNP = new Animacion(imagenes.jugador, this.ancho, this.alto, 0,1);
-        this.caminandoNP = new Animacion(imagenes.jugador_caminando,
-            16, 24, 4, 8);
-
 
         this.animacion=this.quieto;
         this.estado=estados.quieto;
@@ -39,35 +20,56 @@ class Jugador extends Modelo {
         this.animacion.actualizar();
 
 
-        switch (this.estado) {
-
-            case estados.quieto :
-                this.animacion=this.quieto;
-                break;
-
-            case estados.moviendo:
-                this.animacion=this.caminando;
-                if(this.vx==0 && this.vy==0)
-                    this.estado=estados.quieto;
-                break;
-
-            case estados.golpeando:
-                this.vx = 0;
-                this.vy = 0;
-                this.animacion=this.golpeando;
-                break;
-
-            case estados.muriendo:
-                this.animacion=this.muriendo;
-                break;
-        }
-
-
-
         if(this.armado) {
+
+            switch (this.estado) {
+
+                case estados.quieto :
+                    this.animacion=this.quietoP;
+                    break;
+
+                case estados.moviendo:
+                    this.animacion=this.caminandoP;
+                    if(this.vx==0 && this.vy==0)
+                        this.estado=estados.quieto;
+                    break;
+
+                case estados.golpeando:
+                    this.vx = 0;
+                    this.vy = 0;
+                    this.animacion=this.golpeando;
+                    break;
+
+                case estados.muriendo:
+                    this.animacion=this.muriendo;
+                    break;
+            }
 
             this.tiempoDisparo= this.tiempoDisparo-aceleracion;
         } else {
+
+            switch (this.estado) {
+
+                case estados.quieto :
+                    this.animacion=this.quieto;
+                    break;
+
+                case estados.moviendo:
+                    this.animacion=this.caminando;
+                    if(this.vx==0 && this.vy==0)
+                        this.estado=estados.quieto;
+                    break;
+
+                case estados.golpeando:
+                    this.vx = 0;
+                    this.vy = 0;
+                    this.animacion=this.golpeando;
+                    break;
+
+                case estados.muriendo:
+                    this.animacion=this.muriendo;
+                    break;
+            }
 
             this.tiempoDisparo= this.tiempoDisparo-aceleracion;
         }
@@ -154,8 +156,7 @@ class Jugador extends Modelo {
         this.armado=true;
         this.tiempoDisparo=0;
         this.balas=this.balas+3;
-        this.quieto=this.quietoP;
-        this.caminando=this.caminandoP;
+
     }
 
     soltarArma() {
@@ -163,8 +164,7 @@ class Jugador extends Modelo {
             this.armado = false;
             this.tiempoDisparo=0;
             this.balas=0;
-            this.quieto=this.quietoNP;
-            this.caminando=this.caminandoNP;
+            this.animacion=this.quieto;
             var disparoArma = new DisparoArma(this.x, this.y, this.grados);
             return disparoArma;
         } else {

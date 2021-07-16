@@ -23,6 +23,8 @@ class GameLayer extends Layer {
         this.disparosEnemigos = [];
         this.armas = [];
 
+
+
         this.fondoPuntos =
             new Fondo(imagenes.icono_puntos, 480*0.85,320*0.05);
 
@@ -345,7 +347,8 @@ class GameLayer extends Layer {
 
             case "1":
                 if(this.jugador==null) {
-                    this.jugador = new Jugador(x, y);
+                    this.jugador = new Conchi(x, y);
+                    this.jugadorNumero = 1;
                     // modificación para empezar a contar desde el suelo
                     this.jugador.y = this.jugador.y - this.jugador.alto/2;
                     this.espacio.agregarCuerpoDinamico(this.jugador);
@@ -407,6 +410,30 @@ class GameLayer extends Layer {
             }
         }
 
+        //cambiar jugador
+        if(controles.cambiarConchi) {
+            if(this.jugadorNumero!=1) {
+                this.guardarJugador();
+                this.jugador=null
+                this.jugador = new Conchi(jugador.x, jugador.y);//TODO: orientacion
+                this.jugador.armado = conchi.armado;
+                this.jugador.balas = conchi.balas;
+                this.jugadorNumero = 1;
+                this.espacio.agregarCuerpoDinamico(this.jugador);
+            }
+        }
+        if(controles.cambiarCeferina) {
+            if(this.jugadorNumero!=2) {
+                this.guardarJugador();
+                this.jugador=null
+                this.jugador=new Ceferina(jugador.x, jugador.y);//TODO: orientacion
+                this.jugador.armado=ceferina.armado;
+                this.jugador.balas=ceferina.balas;
+                this.jugadorNumero=2;
+                this.espacio.agregarCuerpoDinamico(this.jugador);
+            }
+        }
+
 
 
         // Eje X
@@ -444,6 +471,21 @@ class GameLayer extends Layer {
         this.cursor.y=ratonY;
 
 
+    }
+
+    guardarJugador() {
+        switch (this.jugadorNumero) {
+            case 1:
+                conchi.armado=this.jugador.armado;
+                conchi.balas=this.jugador.balas;
+                break;
+            case 2:
+                ceferina.armado=this.jugador.armado;
+                ceferina.balas=this.jugador.balas;
+                break;
+        }
+        jugador.x=this.jugador.x;
+        jugador.y=this.jugador.y;
     }
 
 
