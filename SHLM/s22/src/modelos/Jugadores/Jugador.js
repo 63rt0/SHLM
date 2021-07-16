@@ -1,6 +1,7 @@
 class Jugador extends Modelo {
 
-    constructor(img, x, y) {
+
+    constructor(img, x, y, grados, radianes) {
         super(img , x, y)
 
         this.vx = 0; // velocidadX
@@ -12,8 +13,8 @@ class Jugador extends Modelo {
         //Rotacion
         this.miraX = 0;
         this.miraY = 0;
-        this.grados = 0;
-        this.radianes = 0;
+        this.grados = grados;
+        this.radianes = radianes;
     }
 
     actualizar(){

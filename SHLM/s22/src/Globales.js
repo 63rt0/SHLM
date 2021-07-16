@@ -37,6 +37,8 @@ orientaciones.izquierda = 3;
 var jugador = {};
 jugador.x;
 jugador.y;
+jugador.grados;
+jugador.radianes;
 
 var conchi = {};
 conchi.balas = 0;

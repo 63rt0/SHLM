@@ -241,7 +241,7 @@ class GameLayer extends Layer {
             this.bloques[i].dibujar(this.scrollX,this.scrollY);
         }
 
-        //this.copa.dibujar(this.scrollX,this.scrollY);
+
         for (var i=0; i < this.disparosJugador.length; i++) {
             this.disparosJugador[i].dibujar(this.scrollX,this.scrollY);
         }
@@ -436,7 +436,7 @@ class GameLayer extends Layer {
             if(this.jugadorNumero!=1 && conchi.vidas>0) {
                 this.guardarJugador();
                 this.jugador=null
-                this.jugador = new Conchi(jugador.x, jugador.y);//TODO: orientacion
+                this.jugador = new Conchi(jugador.x, jugador.y, jugador.grados, jugador.radianes);
                 this.jugador.armado = conchi.armado;
                 this.jugador.balas = conchi.balas;
                 this.jugador.vidas = conchi.vidas;
@@ -448,7 +448,7 @@ class GameLayer extends Layer {
             if(this.jugadorNumero!=2 && ceferina.vidas>0) {
                 this.guardarJugador();
                 this.jugador=null
-                this.jugador=new Ceferina(jugador.x, jugador.y);//TODO: orientacion
+                this.jugador=new Ceferina(jugador.x, jugador.y, jugador.grados, jugador.radianes);
                 this.jugador.armado=ceferina.armado;
                 this.jugador.balas=ceferina.balas;
                 this.jugador.vidas = ceferina.vidas;
@@ -511,6 +511,8 @@ class GameLayer extends Layer {
         }
         jugador.x=this.jugador.x;
         jugador.y=this.jugador.y;
+        jugador.grados=this.jugador.grados;
+        jugador.radianes=this.jugador.radianes;
     }
 
 

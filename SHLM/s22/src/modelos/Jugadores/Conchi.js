@@ -1,7 +1,7 @@
 class Conchi extends Jugador {
 
-    constructor(x, y) {
-        super(imagenes.ceferina, x, y)
+    constructor(x, y, grados, radianes) {
+        super(imagenes.conchi, x, y, grados, radianes);
         this.estado = estados.moviendo;
 
         // Disparo

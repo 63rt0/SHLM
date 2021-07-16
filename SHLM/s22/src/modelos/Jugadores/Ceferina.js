@@ -1,7 +1,7 @@
 class Ceferina extends Jugador {
 
-    constructor(x, y) {
-        super(imagenes.ceferina, x, y)
+    constructor(x, y, grados, radianes) {
+        super(imagenes.ceferina, x, y, grados, radianes);
         this.estado = estados.moviendo;
 
 
