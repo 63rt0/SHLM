@@ -2,12 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="941d1e67-95dd-4dfb-a5fe-14f7927fd206" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/s22/src/modelos/armas/Arma.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s22/src/modelos/armas/Escopeta.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s22/src/modelos/armas/Metralleta.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s22/src/modelos/armas/Pistola.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s22/src/modelos/enemigos/EnemigoArmado.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s22/src/modelos/enemigos/EnemigoEscopeta.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s22/src/modelos/objetos/ObjetoPistola.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s22/src/Globales.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/Globales.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/s22/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/src/Res.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/Res.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/s22/src/layers/GameLayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/layers/GameLayer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s22/src/modelos/Jugadores/Ceferina.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/modelos/Jugadores/Ceferina.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s22/src/modelos/Jugadores/Conchi.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/modelos/Jugadores/Conchi.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/s22/src/modelos/Jugadores/Jugador.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/modelos/Jugadores/Jugador.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/src/modelos/Pistola.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/src/modelos/enemigos/EnemigoPistola.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/modelos/enemigos/EnemigoPistola.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +45,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -91,6 +100,8 @@
       <workItem from="1575550516479" duration="20859000" />
       <workItem from="1626442199690" duration="7133000" />
       <workItem from="1626453283131" duration="5920000" />
+      <workItem from="1626535721448" duration="1438000" />
+      <workItem from="1626628733570" duration="7302000" />
     </task>
     <servers />
   </component>

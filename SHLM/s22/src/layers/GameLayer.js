@@ -11,7 +11,6 @@ class GameLayer extends Layer {
 
 
         this.scrollX = 0;
-        //A5
         this.scrollY = 0;
         this.bloques = [];
         this.cursor = new Cursor(ratonX,ratonY);
@@ -21,6 +20,7 @@ class GameLayer extends Layer {
         this.enemigos = [];
         this.cadaveres = [];
         this.disparosEnemigos = [];
+        this.disparosJugador = [];
         this.armas = [];
 
 
@@ -32,7 +32,7 @@ class GameLayer extends Layer {
 
         this.vidas = new Texto(0,480*0.07,320*0.9 );
 
-        this.disparosJugador = [];
+
         this.balas = new Texto(0,480*0.9,320*0.07 );
         this.cargarMapa("res/"+nivelActual+".txt");
 
@@ -337,7 +337,7 @@ class GameLayer extends Layer {
 
 
             case "p":
-                var enemigoPistola = new EnemigoPistola(x,y,90);
+                var enemigoPistola = new EnemigoEscopeta(x,y,90);
                 enemigoPistola.y = enemigoPistola.y - enemigoPistola.alto/2;
                 this.enemigos.push(enemigoPistola);
                 this.espacio.agregarCuerpoDinamico(enemigoPistola);
@@ -361,7 +361,7 @@ class GameLayer extends Layer {
 
 
             case "a":
-                var pistola = new Pistola(x,y);
+                var pistola = new ObjetoPistola(x,y);
                 pistola.y = pistola.y - pistola.alto/2;
                 this.armas.push(pistola);
                 break;
@@ -401,7 +401,7 @@ class GameLayer extends Layer {
                     this.disparosJugador.push(nuevoDisparo);
                 }
             } else {
-                var patada = this.jugador.patear();
+                var patada = this.jugador.habilidad();
                 if ( patada != null ) {
                     this.espacio.agregarCuerpoDinamico(patada);
                     this.disparosJugador.push(patada);

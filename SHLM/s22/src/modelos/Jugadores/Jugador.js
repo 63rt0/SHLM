@@ -133,7 +133,7 @@ class Jugador extends Modelo {
 
     }
 
-    patear() {
+    habilidad() {
         if ( this.tiempoDisparo < 0) {
             // reiniciar Cadencia
             this.estado = estados.golpeando;
@@ -184,7 +184,10 @@ class Jugador extends Modelo {
         scrollY = scrollY || 0;
 
 
-        this.animacion.dibujar(this.x - scrollX, this.y - scrollY,this.grados);
+        var dibGrados = ((this.grados % 360 ) + 360 ) % 360;
+
+
+        this.animacion.dibujar(this.x - scrollX, this.y - scrollY,dibGrados);
 
     }
 
