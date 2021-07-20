@@ -25,5 +25,9 @@ class DisparoJugador extends Disparo {
 
     }
 
+    agregarLista() {
+        gameLayer.disparosJugador.push(this);
+    }
+
 
 }

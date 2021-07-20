@@ -41,11 +41,9 @@ jugador.grados;
 jugador.radianes;
 
 var conchi = {};
-conchi.balas = 0;
-conchi.armado = false;
+conchi.arma = null;
 conchi.vidas = 2;
 
 var ceferina = {};
-ceferina.balas = 0;
-ceferina.armado = false;
+ceferina.arma = null;
 ceferina.vidas = 3;

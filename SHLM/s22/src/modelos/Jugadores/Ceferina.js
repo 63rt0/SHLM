@@ -6,11 +6,6 @@ class Ceferina extends Jugador {
 
 
 
-        // Disparo
-        this.armado = false;
-        this.balas = 0;
-        this.cadenciaDisparo = 5;
-        this.tiempoDisparo = 0;
 
         //Atributos
         this.vidas=3;

@@ -4,4 +4,9 @@ class ObjetoPistola extends Modelo {
         super(imagenes.pistola, x, y);
     }
 
+
+    getArma() {
+        return new Pistola(3);
+    }
+
 }

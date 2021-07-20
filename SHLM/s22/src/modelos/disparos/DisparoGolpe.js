@@ -1,4 +1,4 @@
-class Patada extends Disparo {
+class DisparoGolpe extends Disparo {
 
     constructor(x, y, grados) {
         super(imagenes.patada, x, y);
@@ -7,7 +7,7 @@ class Patada extends Disparo {
         this.animacion = this.movimiento;
 
 
-        this.v = 12;
+        this.v = 8;
 
         this.grados = grados;
         this.radianes = this.grados*Math.PI/180;
@@ -16,13 +16,18 @@ class Patada extends Disparo {
 
     }
 
+
+
     actualizar (){
 
-        this.vx = this.vx*0.5;
-        this.vy = this.vy*0.5;
+        this.vx = this.v * Math.cos(this.radianes) * aceleracion;
+        this.vy = this.v * Math.sin(this.radianes) * aceleracion;
 
     }
 
+    agregarLista() {
+        gameLayer.disparosJugador.push(this);
+    }
 
 
 }

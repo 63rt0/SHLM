@@ -2,20 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="941d1e67-95dd-4dfb-a5fe-14f7927fd206" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/s22/src/modelos/armas/Arma.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/s22/src/modelos/armas/Escopeta.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/s22/src/modelos/armas/Metralleta.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/s22/src/modelos/armas/Pistola.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/s22/src/modelos/enemigos/EnemigoArmado.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/s22/src/modelos/enemigos/EnemigoEscopeta.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/s22/src/modelos/objetos/ObjetoPistola.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s22/src/modelos/armas/Francotirador.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s22/src/modelos/armas/Golpe.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s22/src/modelos/enemigos/EnemigoFrancotirador.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s22/src/modelos/enemigos/EnemigoMetralleta.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s22/src/modelos/objetos/ObjetoEscopeta.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s22/src/modelos/objetos/ObjetoFrancotirador.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/s22/src/modelos/objetos/ObjetoMetralleta.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/s22/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/s22/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/res/tania.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/src/Globales.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/Globales.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/s22/src/Res.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/Res.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/src/graficos/Animacion.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/graficos/Animacion.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/s22/src/layers/GameLayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/layers/GameLayer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/src/modelos/Jugadores/Ceferina.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/modelos/Jugadores/Ceferina.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/src/modelos/Jugadores/Conchi.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/modelos/Jugadores/Conchi.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/s22/src/modelos/Jugadores/Jugador.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/modelos/Jugadores/Jugador.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s22/src/modelos/Pistola.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/src/modelos/Modelo.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/modelos/Modelo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/src/modelos/armas/Arma.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/modelos/armas/Arma.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/src/modelos/armas/Escopeta.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/modelos/armas/Escopeta.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/src/modelos/armas/Metralleta.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/modelos/armas/Metralleta.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/src/modelos/armas/Pistola.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/modelos/armas/Pistola.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/src/modelos/disparos/DisparoArma.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/modelos/disparos/DisparoArma.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/src/modelos/disparos/DisparoEnemigo.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/modelos/disparos/DisparoEnemigo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/src/modelos/disparos/DisparoJugador.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/modelos/disparos/DisparoJugador.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/src/modelos/disparos/Patada.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/modelos/disparos/DisparoGolpe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/src/modelos/enemigos/EnemigoArmado.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/modelos/enemigos/EnemigoArmado.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/src/modelos/enemigos/EnemigoEscopeta.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/modelos/enemigos/EnemigoEscopeta.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/s22/src/modelos/enemigos/EnemigoPistola.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/modelos/enemigos/EnemigoPistola.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s22/src/modelos/objetos/ObjetoPistola.js" beforeDir="false" afterPath="$PROJECT_DIR$/s22/src/modelos/objetos/ObjetoPistola.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +117,10 @@
       <workItem from="1626442199690" duration="7133000" />
       <workItem from="1626453283131" duration="5920000" />
       <workItem from="1626535721448" duration="1438000" />
-      <workItem from="1626628733570" duration="7302000" />
+      <workItem from="1626628733570" duration="7897000" />
+      <workItem from="1626696356450" duration="2506000" />
+      <workItem from="1626718288586" duration="6641000" />
+      <workItem from="1626807354948" duration="4930000" />
     </task>
     <servers />
   </component>

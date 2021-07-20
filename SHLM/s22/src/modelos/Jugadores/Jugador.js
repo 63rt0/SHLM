@@ -7,6 +7,9 @@ class Jugador extends Modelo {
         this.vx = 0; // velocidadX
         this.vy = 0; // velocidadY
 
+        this.arma = null;
+        this.ataque = new Golpe(1);
+
         this.animacion=this.quieto;
         this.estado=estados.quieto;
 
@@ -21,7 +24,7 @@ class Jugador extends Modelo {
         this.animacion.actualizar();
 
 
-        if(this.armado) {
+        if(this.arma!=null) {
 
             switch (this.estado) {
 
@@ -46,7 +49,6 @@ class Jugador extends Modelo {
                     break;
             }
 
-            this.tiempoDisparo= this.tiempoDisparo-aceleracion;
         } else {
 
             switch (this.estado) {
@@ -71,9 +73,16 @@ class Jugador extends Modelo {
                     this.animacion=this.muriendo;
                     break;
             }
-
-            this.tiempoDisparo= this.tiempoDisparo-aceleracion;
         }
+
+        if(this.arma!=null) {
+            this.arma.actualizar();
+        }
+
+        if(this.ataque!=null) {
+            this.ataque.actualizar();
+        }
+
 
 
         var cat1 =  this.miraX - this.x;
@@ -119,30 +128,24 @@ class Jugador extends Modelo {
 
     disparar(){
 
-        if ( this.tiempoDisparo < 0 && this.balas>0) {
-            // reiniciar Cadencia
-            this.estado = estados.disparando;
-            this.tiempoDisparo = this.cadenciaDisparo;
-            var disparo = new DisparoJugador(this.x, this.y, this.grados);
-            this.balas--;
-            return disparo;
+        if ( this.arma!=null) {
+            if ( this.arma.puedeDisparar()) {
 
+            this.estado = estados.disparando;
+
+            this.arma.dispararJugador(this.x,this.y,this.grados);
+        }
+            //cd o no ammo
         } else {
-            return null;
+            this.golpear();
         }
 
     }
 
-    habilidad() {
-        if ( this.tiempoDisparo < 0) {
-            // reiniciar Cadencia
+    golpear() {
+        if (this.ataque.puedeDisparar()) {
             this.estado = estados.golpeando;
-            this.tiempoDisparo = this.cadenciaDisparo;
-            var patada = new Patada(this.x, this.y, this.grados);
-            return patada;
-
-        } else {
-            return null;
+            this.ataque.dispararJugador(this.x,this.y,this.grados);
         }
     }
 
@@ -150,24 +153,32 @@ class Jugador extends Modelo {
         this.estado = estados.quieto;
                 gameLayer.espacio
                     .eliminarCuerpoDinamico(gameLayer.disparosJugador[0]);
-                gameLayer.disparosJugador.splice(0, 1);
+                gameLayer.disparosJugador.splice(0, 1);//TODO: puede borrar otro disparo
     }
 
-    recojerArma() {
-        this.armado=true;
-        this.tiempoDisparo=0;
-        this.balas=this.balas+3;
+    recojerArma(arma) {
+
+        if(this.arma==null) {
+
+            this.arma=arma;
+            return true;
+        } else {
+            if(this.arma.constructor.name===arma.constructor.name) {
+                this.arma.nMunicion=this.arma.nMunicion+arma.nMunicion;
+                return true;
+            }
+        }
+        return false;
 
     }
 
     soltarArma() {
-        if(this.armado==true) {
-            this.armado = false;
-            this.tiempoDisparo=0;
-            this.balas=0;
+        if(this.arma!=null) {
+
+            var lanzarArma = this.arma.getLanzarArma(this.x, this.y, this.grados);
+            this.arma = null;
             this.animacion=this.quieto;
-            var disparoArma = new DisparoArma(this.x, this.y, this.grados);
-            return disparoArma;
+            return lanzarArma;
         } else {
             return null;
         }
@@ -184,10 +195,10 @@ class Jugador extends Modelo {
         scrollY = scrollY || 0;
 
 
-        var dibGrados = ((this.grados % 360 ) + 360 ) % 360;
 
 
-        this.animacion.dibujar(this.x - scrollX, this.y - scrollY,dibGrados);
+
+        this.animacion.dibujar(this.x - scrollX, this.y - scrollY,this.grados);
 
     }
 

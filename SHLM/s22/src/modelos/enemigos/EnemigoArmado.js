@@ -49,7 +49,11 @@ class EnemigoArmado extends Enemigo {
                     this.grados = 360 - alfa;
                     this.radianes = this.grados/180*Math.PI;
                 }
-                this.disparar();
+
+                if(this.arma.puedeDispararEnemigo()) {
+                    this.arma.dispararEnemigo(this.x,this.y,this.grados);
+                }
+
                 this.arma.actualizar();
                 break;
 

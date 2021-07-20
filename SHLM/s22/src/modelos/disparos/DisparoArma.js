@@ -1,9 +1,9 @@
 class DisparoArma extends Disparo {
 
-    constructor(x, y, grados) {
-        super(imagenes.pistola_lanzada, x, y);
+    constructor(x, y, grados, img) {
+        super(img, x, y);
 
-        this.movimiento = new Animacion(imagenes.pistola_lanzada, this.ancho, this.alto, 0,1);
+        this.movimiento = new Animacion(img, this.ancho, this.alto, 0,1);
         this.animacion = this.movimiento;
 
         this.v = 16;

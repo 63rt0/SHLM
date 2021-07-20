@@ -23,12 +23,11 @@ class Arma {
     }
 
 
-    disparar(balas){
-        this.enfriamiento = this.cadencia;
-        this.nMunicion = this.nMunicion-1;
-
-        balas.forEach(bala => gameLayer.disparosEnemigos.push(bala));
-        balas.forEach(bala => gameLayer.espacio.agregarCuerpoDinamico(bala));
+    agregarDisparos(disparos) {
+        disparos.forEach(disparo => {
+            disparo.agregarLista();
+            gameLayer.espacio.agregarCuerpoDinamico(disparo);
+        });
     }
 
 

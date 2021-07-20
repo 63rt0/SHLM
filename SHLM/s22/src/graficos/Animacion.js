@@ -51,7 +51,14 @@ class Animacion {
         this.rectanguloDibujo.x = this.frameActual * this.frameAncho;
     }
 
-    dibujar (x, y, grados=0){
+    dibujar (x, y, grados=0) {
+
+        console.log("x: "+x);
+        console.log("y: "+y);
+        console.log("grados: "+grados);
+
+
+        var grados = ((grados % 360 ) + 360 ) % 360;
 
         contexto.translate(x,y);
         contexto.rotate(grados*Math.PI/180);

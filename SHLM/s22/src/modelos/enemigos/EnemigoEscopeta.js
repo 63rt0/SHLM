@@ -16,25 +16,12 @@ class EnemigoEscopeta extends EnemigoArmado {
     }
 
 
-    disparar(){
-        if ( this.arma.puedeDispararEnemigo()) {
-
-            this.estado = estados.disparando;
-
-
-            var disparo = new DisparoEnemigo(this.x, this.y, this.grados);
-            var disparo2 = new DisparoEnemigo(this.x, this.y, this.grados+5);
-            var disparo3 = new DisparoEnemigo(this.x, this.y, this.grados-5);
-
-            this.arma.disparar([disparo,disparo2,disparo3]);
-        }
-    }
 
     impactado(){
         if ( this.estado != estados.muriendo ){
             this.estado = estados.muriendo;
-            var pistola = new ObjetoPistola((this.x+10), (this.y-5));
-            gameLayer.armas.push(pistola);
+            var arma = new ObjetoEscopeta((this.x+10), (this.y-5));
+            gameLayer.armas.push(arma);
         }
     }
 

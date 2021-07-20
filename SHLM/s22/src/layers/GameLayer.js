@@ -166,8 +166,13 @@ class GameLayer extends Layer {
         }
 
 
+        if(this.jugador.arma!=null && this.jugador.arma.nMunicion>-1) {
+            this.balas.valor=this.jugador.arma.nMunicion;
+        } else {
+            this.balas.valor='-';
+        }
 
-        this.balas.valor=this.jugador.balas;
+
         this.vidas.valor=this.jugador.vidas;
 
 
@@ -337,7 +342,7 @@ class GameLayer extends Layer {
 
 
             case "p":
-                var enemigoPistola = new EnemigoEscopeta(x,y,90);
+                var enemigoPistola = new EnemigoFrancotirador(x,y,90);
                 enemigoPistola.y = enemigoPistola.y - enemigoPistola.alto/2;
                 this.enemigos.push(enemigoPistola);
                 this.espacio.agregarCuerpoDinamico(enemigoPistola);
@@ -394,27 +399,16 @@ class GameLayer extends Layer {
         // disparar
         if (controles.disparo){
             aceleracion=1;
-            if(this.jugador.armado) {
-                var nuevoDisparo = this.jugador.disparar();
-                if ( nuevoDisparo != null ) {
-                    this.espacio.agregarCuerpoDinamico(nuevoDisparo);
-                    this.disparosJugador.push(nuevoDisparo);
-                }
-            } else {
-                var patada = this.jugador.habilidad();
-                if ( patada != null ) {
-                    this.espacio.agregarCuerpoDinamico(patada);
-                    this.disparosJugador.push(patada);
-                }
-            }
+            this.jugador.disparar();
         }
 
         // interactuar
         if(controles.interactuar) {
             for (var i=0; i < this.armas.length; i++) {
                if(this.jugador.colisiona(this.armas[i])) {
-                   this.jugador.recojerArma();
-                   this.armas.splice(i, 1);
+                   if(this.jugador.recojerArma(this.armas[i].getArma())) {
+                       this.armas.splice(i, 1);
+                   }
                    break;
                }
             }
@@ -422,12 +416,10 @@ class GameLayer extends Layer {
 
         //soltar
         if(controles.soltar) {
-            if(this.jugador.armado){
-                var disparoArma = this.jugador.soltarArma();
-                if ( disparoArma != null ) {
-                    this.espacio.agregarCuerpoDinamico(disparoArma);
-                    this.disparosJugador.push(disparoArma);
-                }
+            var lanzarArma = this.jugador.soltarArma();
+            if ( lanzarArma != null ) {
+                this.espacio.agregarCuerpoDinamico(lanzarArma);
+                this.disparosJugador.push(lanzarArma);
             }
         }
 
@@ -437,8 +429,7 @@ class GameLayer extends Layer {
                 this.guardarJugador();
                 this.jugador=null
                 this.jugador = new Conchi(jugador.x, jugador.y, jugador.grados, jugador.radianes);
-                this.jugador.armado = conchi.armado;
-                this.jugador.balas = conchi.balas;
+                this.jugador.arma = conchi.arma;
                 this.jugador.vidas = conchi.vidas;
                 this.jugadorNumero = 1;
                 this.espacio.agregarCuerpoDinamico(this.jugador);
@@ -449,8 +440,7 @@ class GameLayer extends Layer {
                 this.guardarJugador();
                 this.jugador=null
                 this.jugador=new Ceferina(jugador.x, jugador.y, jugador.grados, jugador.radianes);
-                this.jugador.armado=ceferina.armado;
-                this.jugador.balas=ceferina.balas;
+                this.jugador.arma=ceferina.arma;
                 this.jugador.vidas = ceferina.vidas;
                 this.jugadorNumero=2;
                 this.espacio.agregarCuerpoDinamico(this.jugador);
@@ -499,13 +489,11 @@ class GameLayer extends Layer {
     guardarJugador() {
         switch (this.jugadorNumero) {
             case 1:
-                conchi.armado=this.jugador.armado;
-                conchi.balas=this.jugador.balas;
+                conchi.arma=this.jugador.arma;
                 conchi.vidas=this.jugador.vidas;
                 break;
             case 2:
-                ceferina.armado=this.jugador.armado;
-                ceferina.balas=this.jugador.balas;
+                ceferina.arma=this.jugador.arma;
                 ceferina.vidas=this.jugador.vidas;
                 break;
         }

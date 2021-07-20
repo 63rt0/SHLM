@@ -4,11 +4,7 @@ class Conchi extends Jugador {
         super(imagenes.conchi, x, y, grados, radianes);
         this.estado = estados.moviendo;
 
-        // Disparo
-        this.armado = false;
-        this.balas = 0;
-        this.cadenciaDisparo = 5;
-        this.tiempoDisparo = 0;
+
 
         //Vida
         this.vidas=2;

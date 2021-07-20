@@ -24,13 +24,29 @@ class Modelo {
 
 
 
-    dibujar (scrollX, scrollY){
+    dibujar (scrollX, scrollY, grados=0){
+
 
         scrollX = scrollX || 0;
         scrollY = scrollY || 0;
-        contexto.drawImage(this.imagen,
+
+        var grados = ((grados % 360 ) + 360 ) % 360;
+
+        contexto.translate(this.x,this.y);
+        contexto.rotate(grados*Math.PI/180);
+        contexto.translate(-this.x,-this.y);
+
+        contexto.drawImage( this.imagen,
             this.x - this.imagen.width/2 - scrollX,
             this.y - this.imagen.height/2 - scrollY);
+
+        contexto.translate(this.x, this.y);
+        contexto.rotate(-grados*Math.PI/180);
+        contexto.translate(-this.x,-this.y);
+
+
+
+
     }
 
 
